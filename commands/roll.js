@@ -18,7 +18,7 @@ const startButton = new MessageButton()
 	.setStyle('PRIMARY');
 
 const editButton = new MessageButton()
-	.setCustomId('edit')
+	.setCustomId('settings')
 	.setLabel('Settings')
 	.setStyle('SECONDARY');
 
