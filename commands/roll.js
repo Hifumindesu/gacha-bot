@@ -33,7 +33,7 @@ module.exports = {
 		.setDescription('Start a roll session.'),
 
 	async execute(interaction) {
-
+		console.log(interaction);
 		const avatar = interaction.user.avatarURL();
 
 		const gender = getPreference('gender');
@@ -52,6 +52,20 @@ module.exports = {
 				{ name: 'Gender', value: `${ gender }`, inline: true },
 				{ name: 'Source', value: `${ source }`, inline: true },
 			);
+
+		// const collector = interaction.message.createMessageComponentCollector({ componentType: 'BUTTON', time: 15000 });
+
+		// collector.on('collect', i => {
+		// 	if (i.user.id === interaction.user.id) {
+		// 		i.reply(`${i.user.id} clicked on the ${i.customId} button.`);
+		// 	} else {
+		// 		i.reply({ content: `These buttons aren't for you!`, ephemeral: true });
+		// 	}
+		// });
+
+		// collector.on('end', collected => {
+		// 	console.log(`Collected ${collected.size} interactions.`);
+		// });
 
 		try {
 			interaction.reply({
