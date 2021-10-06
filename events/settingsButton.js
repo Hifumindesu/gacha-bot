@@ -1,4 +1,4 @@
-// When someone presses the claim button
+// When someone presses the settings button
 const { MessageEmbed } = require('discord.js');
 const { MessageActionRow, MessageButton } = require('discord.js');
 const { getPreference } = require('../info/preferences.js');
