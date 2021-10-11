@@ -1,6 +1,6 @@
 // Check bot response delay
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const boundChannels = require('../info/channelBind.js');
+const { filter } = require('../info/filter.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -8,14 +8,9 @@ module.exports = {
 		.setDescription('Checks the bot\'s ping.'),
 
 	async execute(interaction) {
-		let filter = false;
-		boundChannels.data.forEach((value) => {
-			console.log(value);
-			console.log(interaction.channelId);
-			if (interaction.channelId != value) filter = true;
-		});
+		const channelId = interaction.channelId;
 
-		if (filter) return;
+		if (filter(channelId)) return;
 
 		try {
 			const sent = await interaction.reply({ content: 'Pinging...', fetchReply: true });

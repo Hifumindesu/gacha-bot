@@ -1,16 +1,21 @@
 // List of channels the bot is bound to
 const boundChannels = new Map([
-	['bot-tests', '892826883555721236'],
+	// id, name
+	['892826883555721236', 'bot-tests'],
 ]);
 
 module.exports = {
 	data: boundChannels,
 
-	getBoundChannel(channel) {
-		return boundChannels.get(channel);
+	getBoundChannel(id) {
+		return boundChannels.get(id);
 	},
 
-	setBoundChannel(channel, id) {
-		return boundChannels.set(channel, id);
+	setBoundChannel(id, name) {
+		return boundChannels.set(id, name);
+	},
+
+	hasBoundChannel(id) {
+		return boundChannels.has(id);
 	},
 };
