@@ -1,6 +1,6 @@
 // Check bot response delay
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { filter } = require('../info/filter.js');
+const { hasBoundChannel } = require('../info/channelBind.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -10,7 +10,7 @@ module.exports = {
 	async execute(interaction) {
 		const channelId = interaction.channelId;
 
-		if (filter(channelId)) return;
+		if (!hasBoundChannel(channelId)) return;
 
 		try {
 			const sent = await interaction.reply({ content: 'Pinging...', fetchReply: true });
