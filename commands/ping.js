@@ -9,7 +9,6 @@ module.exports = {
 
 	async execute(interaction) {
 		const channelId = interaction.channelId;
-
 		if (!hasBoundChannel(channelId)) return;
 
 		try {

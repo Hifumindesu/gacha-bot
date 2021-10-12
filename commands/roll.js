@@ -1,6 +1,7 @@
 // Start a roll session
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
+const { hasBoundChannel } = require('../info/channelBind.js');
 const { getPreference } = require('../info/preferences.js');
 
 const embed = new MessageEmbed()
@@ -33,9 +34,10 @@ module.exports = {
 		.setDescription('Start a roll session.'),
 
 	async execute(interaction) {
+		const channelId = interaction.channelId;
+		if (!hasBoundChannel(channelId)) return;
 
 		const avatar = interaction.user.avatarURL();
-
 		const gender = getPreference('gender');
 		const source = getPreference('source');
 
