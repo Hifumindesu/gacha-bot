@@ -16,4 +16,8 @@ module.exports = {
 	hasBoundChannel(id) {
 		return boundChannels.has(id);
 	},
+
+	delBoundChannel(id) {
+		return boundChannels.delete(id);
+	},
 };
