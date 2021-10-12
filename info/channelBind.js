@@ -5,8 +5,6 @@ const boundChannels = new Map([
 ]);
 
 module.exports = {
-	data: boundChannels,
-
 	getBoundChannel(id) {
 		return boundChannels.get(id);
 	},
