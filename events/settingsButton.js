@@ -1,4 +1,4 @@
-// When someone presses a button in the rollsettings command
+// When someone presses a button in the rollsettings comman
 const { getPreference, setPreference } = require('../info/preferences.js');
 const { getButtonList, getEmbed } = require('../info/settingsMenu.js');
 
