@@ -1,7 +1,7 @@
 // Start a roll session
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { getPreference } = require('../info/preferences.js');
-const { getEmbed, getRow } = require('../info/rollMenu.js');
+const { getEmbed, getRow, updateButtons } = require('../info/rollMenu.js');
 
 module.exports = {
 	data:
@@ -13,6 +13,11 @@ module.exports = {
 		const avatar = interaction.user.avatarURL();
 		const gender = getPreference('gender');
 		const source = getPreference('source');
+
+
+		// experiment
+		const rolls = 0;
+		updateButtons(rolls);
 
 
 		const embed = getEmbed(interaction, avatar, gender, source);
