@@ -30,7 +30,6 @@ const row = new MessageActionRow()
 const buttonList = [
 	'start',
 	'settings',
-	'cancel',
 ];
 
 
