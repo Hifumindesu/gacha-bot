@@ -5,7 +5,6 @@ const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 const embed = new MessageEmbed()
 	.setColor('#000000')
 	.setTitle('')
-	.setDescription('Use the buttons below to change your settings.')
 	.setTimestamp()
 	.setFooter('');
 
@@ -87,6 +86,7 @@ module.exports = {
 	getEmbed(interaction, avatar, gender, source, isUpdate) {
 		if (isUpdate === false) {
 			embed.setTitle(`${ interaction.user.username }'s roll settings`)
+				.setDescription('Use the buttons below to change your settings.')
 				.setFooter(`${ interaction.user.tag }`, avatar)
 				.setFields(
 					{ name: 'Gender', value: `${ gender }`, inline: true },
