@@ -14,15 +14,11 @@ module.exports = {
 		const gender = getPreference('gender');
 		const source = getPreference('source');
 
-
-		// experiment
 		const rolls = 0;
 		updateButtons(rolls);
 
-
 		const embed = getEmbed(interaction, avatar, gender, source);
 		const row = getRow();
-
 
 		try {
 			interaction.reply({

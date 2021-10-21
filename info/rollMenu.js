@@ -5,7 +5,7 @@ const { MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
 const embed = new MessageEmbed()
 	.setColor('#000000')
 	.setTitle('')
-	.setDescription('Press "Start" to begin.')
+	.setDescription('Press Start to begin.')
 	.setTimestamp()
 	.setFooter('');
 
@@ -45,7 +45,7 @@ module.exports = {
 		embed.setTitle(`${ interaction.user.username }'s roll session`)
 			.setFooter(`${ interaction.user.tag }`, avatar)
 			.setFields(
-				{ name: 'Roll Settings', value: 'Press the Settings button to edit' },
+				{ name: 'Roll Settings', value: 'Press Settings to edit.' },
 				{ name: 'Gender', value: `${ gender }`, inline: true },
 				{ name: 'Source', value: `${ source }`, inline: true },
 			);
@@ -54,7 +54,6 @@ module.exports = {
 	},
 
 	getRow() {
-		console.log(row.components);
 		return row;
 	},
 
